@@ -5,9 +5,10 @@ on:
       -'release*'
 
 jobs:
-  name: Build/Sign APK
-  runs-on: ubuntu-latest
-  steps:
+  build:
+    name: Build/Sign APK
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2
     - name: Get Tag
       id: var
