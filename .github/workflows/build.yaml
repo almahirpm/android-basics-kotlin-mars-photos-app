@@ -64,16 +64,15 @@ jobs:
             include-compare: false
             semver: false
 
-
     - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{ steps.changelog.outputs.changelog }} &#x20;
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: ${{ steps.changelog.outputs.changelog }} &#x20;
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
 
     - name: Upload APK
       uses: actions/upload-release-asset@v1
